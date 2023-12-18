@@ -2,4 +2,8 @@
     <string name="app_name">RecyclerViewApp</string>
     <string name="button">Button</string>
     <string name="button1">second</string>
+    <string name="titulo">titulo\n</string>
+    <string name="mensaje">hey!!!</string>
+    <string name="ok">ok</string>
+    <string name="refueling">Repostajes</string>
 </resources>

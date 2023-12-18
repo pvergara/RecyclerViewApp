@@ -3,4 +3,5 @@
     <string name="app_name">RecyclerViewApp</string>
     <string name="button">Botón</string>
     <string name="button1">Segundo</string>
+    <string name="refueling">Repostajes</string>
 </resources>
