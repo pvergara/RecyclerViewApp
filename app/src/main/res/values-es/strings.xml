@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RecyclerViewApp</string>
+    <string name="button">Botón</string>
+    <string name="button1">Segundo</string>
+</resources>
