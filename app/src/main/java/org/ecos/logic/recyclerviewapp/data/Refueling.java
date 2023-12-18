@@ -1,6 +1,7 @@
 package org.ecos.logic.recyclerviewapp.data;
 
 import java.io.Serializable;
+import java.util.Optional;
 
 public class Refueling implements Serializable {
     private int refuelingId;
@@ -9,6 +10,7 @@ public class Refueling implements Serializable {
     private double litres;
     private int km;
     private int gasStationId;
+    private GasStation gasStation;
 
     public Refueling(int refuelingId, int type, String date, double litres, int km, int gasStationId) {
         this.refuelingId = refuelingId;
@@ -65,5 +67,13 @@ public class Refueling implements Serializable {
 
     public void setGasStationId(int gasStationId) {
         this.gasStationId = gasStationId;
+    }
+
+    public void setGasStation(GasStation gasStation) {
+        this.gasStation = gasStation;
+    }
+
+    public GasStation getGasStation() {
+        return this.gasStation;
     }
 }
