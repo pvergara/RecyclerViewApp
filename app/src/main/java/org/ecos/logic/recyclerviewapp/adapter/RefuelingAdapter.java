@@ -1,9 +1,11 @@
 package org.ecos.logic.recyclerviewapp.adapter;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.activity.result.ActivityResultLauncher;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -15,6 +17,12 @@ import java.util.List;
 public class RefuelingAdapter extends RecyclerView.Adapter<RefuelingViewHolder> {
     private final List<Refueling> refuelingCollection;
 
+    public void setLauncher(ActivityResultLauncher<Intent> launcher) {
+        this.launcher = launcher;
+    }
+
+    private ActivityResultLauncher<Intent> launcher;
+
     public RefuelingAdapter(List<Refueling> refuelingCollection) {
         this.refuelingCollection = refuelingCollection;
     }
@@ -23,7 +31,9 @@ public class RefuelingAdapter extends RecyclerView.Adapter<RefuelingViewHolder> 
     @Override
     public RefuelingViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cell, parent, false);
-        return new RefuelingViewHolder(view);
+        RefuelingViewHolder refuelingViewHolder = new RefuelingViewHolder(view);
+        refuelingViewHolder.setLauncher(this.launcher);
+        return refuelingViewHolder;
     }
 
     @Override
@@ -36,4 +46,5 @@ public class RefuelingAdapter extends RecyclerView.Adapter<RefuelingViewHolder> 
     public int getItemCount() {
         return this.refuelingCollection.size();
     }
+
 }
